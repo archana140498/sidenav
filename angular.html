@@ -1,0 +1,64 @@
+<!doctype>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+
+<body>
+    <h1>Registraton </h1>
+    <div ng-app="myapp" ng-controller="myctrl">
+       
+        First Name: <input type="text" ng-model="firstName"><br><br>
+        Last Name: <input type="text" ng-model="lastName">
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+
+    </div>
+ <p>Change the value of the input field:</p>
+    <div ng-app="" ng-init="myCol='lightblue'"><br><br>
+        <input  style="background-color:{{mycol}}" ng-model="myCol">
+        </div>
+      
+            <div data-ng-app="" data-ng-init="quantity=1;price=5">
+
+                <h2>Cost Calculator</h2>
+                
+                Quantity: <input type="number" ng-model="quantity">
+                Price: <input type="number" ng-model="price">
+                
+                <p><b>Total in dollar:</b> {{ quantity * price }}</p>
+                
+                </div>
+
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+
+<p>Looping with objects:</p>
+<ul>
+  <li ng-repeat="x in names">
+  {{ x.name + ', ' + x.country }}</li>
+</ul>
+
+</div>
+<w3-test-directive></w3-test-directive>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+
+            
+    </script>
+        var app = angular.module('myapp', []);
+        app.controller('myctrl', function($scope) {
+            $scope.firstName= "sindhu";
+            $scope.lastName= "Archu";
+        });
+        </script>
+        
+</body>
+</html>
